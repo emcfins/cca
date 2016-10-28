@@ -4,13 +4,13 @@ Let's make America [Colossal Cave Adventure] (https://en.wikipedia.org/wiki/Colo
 
 Based upon Fortran code found on [Jerz's Literacy Weblog] (http://jerz.setonhill.edu/intfic/colossal-cave-adventure-source-code/)
 
-### To Compile as of October 28, 2016
+### To Compile - as of October 28, 2016
 
 ```
 gfortran -g -Wall -Wextra -Warray-temporaries -Wconversion -fimplicit-none -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan advf4-77-03-31.f 
 ```
 
-## Using the Dockerfile
+### Using the Dockerfile
 
 When in the same directory as the README.md, run:
 ```
