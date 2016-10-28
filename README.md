@@ -1,6 +1,6 @@
 # cca
 
-Let's make [America Colossal Cave Adventure] (https://en.wikipedia.org/wiki/Colossal_Cave_Adventure) again!
+Let's make America [Colossal Cave Adventure] (https://en.wikipedia.org/wiki/Colossal_Cave_Adventure) again!
 
 Based upon Fortran code found on [Jerz's Literacy Weblog] (http://jerz.setonhill.edu/intfic/colossal-cave-adventure-source-code/)
 
