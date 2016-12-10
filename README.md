@@ -4,6 +4,8 @@ Let's make America [Colossal Cave Adventure] (https://en.wikipedia.org/wiki/Colo
 
 Based upon Fortran code found on [Jerz's Literacy Weblog] (http://jerz.setonhill.edu/intfic/colossal-cave-adventure-source-code/)
 
+Quite a bit more info [here] (http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html#section02), including an early translation to C
+
 ### To Compile - as of October 28, 2016
 
 ```
