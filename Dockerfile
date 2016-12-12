@@ -4,6 +4,8 @@
 FROM debian:latest
 
 RUN apt-get update && \
-  apt-get install -y gcc gfortran
+  apt-get install -y gcc \
+                     gfortran \
+		     vim 
 
 CMD ["/bin/bash"]
