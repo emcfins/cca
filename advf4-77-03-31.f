@@ -1,3 +1,9 @@
+C This is how I currently run this in the docker container: 
+C      gfortran -g -w -Wall -Wextra -Warray-temporaries -Wconversion
+C      -fimplicit-none -fbacktrace -ffree-line-length-0 -fcheck=all
+C      -ffpe-trap=zero,overflow,underflow -finit-real=nan
+C      -fno-range-check -std=legacy -o adventure advf4-77-03-31.f 2>
+C      compile.out
 C ADVENTURES
       IMPLICIT INTEGER(A-Z)
       REAL RAN
@@ -392,7 +398,8 @@ C K=1 MEANS ANY INPUT
 
 
 2012  A=WD2
-      B=' '
+      CHARACTER B=' '
+!      B=' '
       TWOWDS=0
       GOTO 2021
 
@@ -435,7 +442,7 @@ C 2021  IF(A.NE.'WEST')GOTO 2023
 
 
 2028  A=WD2
-      B=' '
+      B=CHAR(' ')
       TWOWDS=0
       GOTO 2023
 
@@ -697,7 +704,7 @@ C POUR
       IMPLICIT INTEGER(A-Z)
       DIMENSION A(5),M2(6)
       DATA M2/O"4000000000",O"20000000",O"100000",O"400",O"2",0/
-C 6     ACCEPT 1,(A(I), I=1,4)
+6     ACCEPT 1,(A(I), I=1,4)
 6     READ *,(A(I), I=1,4)
 1     FORMAT(4A5)
       TWOW=0
@@ -718,7 +725,8 @@ C 6     ACCEPT 1,(A(I), I=1,4)
 3     IF(S.EQ.1) GOTO 2
       S=1
       IF(J.EQ.1) B=(B.AND.-M2(K)).OR.(O"201004020100".AND.
-     1 (-M2(K).XOR.-1))
+C     1 (-M2(K).XOR.-1))
+     1 (-M2(K).NEQV.-1))
 2     CONTINUE
 4     D=A(2)
       RETURN

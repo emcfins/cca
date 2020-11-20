@@ -6,10 +6,11 @@ Based upon Fortran code found on [Jerz's Literacy Weblog] (http://jerz.setonhill
 
 Quite a bit more info [here] (http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html#section02), including an early translation to C
 
-### To Compile - as of October 28, 2016
+### To Compile - as of Nov19, 2020
 
 ```
-gfortran -g -Wall -Wextra -Warray-temporaries -Wconversion -fimplicit-none -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan advf4-77-03-31.f 
+gfortran -g -w -Wall -Wextra -Warray-temporaries -Wconversion -fimplicit-none -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan -fno-range-check -std=legacy -o adventure advf4-77-03-31.f 2>
+compile.out 
 ```
 
 ### Using the Dockerfile
