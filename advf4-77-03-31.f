@@ -398,7 +398,7 @@ C K=1 MEANS ANY INPUT
 
 
 2012  A=WD2
-      CHARACTER B=' '
+      B=CHARACTER(' ')
 !      B=' '
       TWOWDS=0
       GOTO 2021
@@ -442,7 +442,7 @@ C 2021  IF(A.NE.'WEST')GOTO 2023
 
 
 2028  A=WD2
-      B=CHAR(' ')
+      B=CHARACTER(' ')
       TWOWDS=0
       GOTO 2023
 
@@ -704,7 +704,7 @@ C POUR
       IMPLICIT INTEGER(A-Z)
       DIMENSION A(5),M2(6)
       DATA M2/O"4000000000",O"20000000",O"100000",O"400",O"2",0/
-6     ACCEPT 1,(A(I), I=1,4)
+! 6     ACCEPT 1,(A(I), I=1,4)
 6     READ *,(A(I), I=1,4)
 1     FORMAT(4A5)
       TWOW=0
