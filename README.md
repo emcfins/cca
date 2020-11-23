@@ -6,12 +6,6 @@ Based upon Fortran code found on [Jerz's Literacy Weblog] (http://jerz.setonhill
 
 Quite a bit more info [here] (http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html#section02), including an early translation to C
 
-### To Compile - as of Nov19, 2020
-
-```
-gfortran -g -w -Wall -Wextra -Warray-temporaries -Wconversion -fimplicit-none -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan -fno-range-check -std=legacy -o adventure advf4-77-03-31.f 2>
-compile.out 
-```
 
 ### Using the Dockerfile
 
@@ -20,6 +14,17 @@ When in the same directory as the README.md, run:
 docker build -t cca .
 
 docker run -it -v <location of project>:/data cca
+```
+
+### To Compile - as of Nov19, 2020
+
+```
+cd nelson-port
+gfortran -g -w -Wall -Wextra -Warray-temporaries -Wconversion -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan -fno-range-check -std=legacy -std=gnu -o adventure advent.for 2> compile.out
+```
+### To Run
+```
+./adventure
 ```
 
 ### Things I've learned so far by Erin
