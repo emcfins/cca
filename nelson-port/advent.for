@@ -1,5 +1,5 @@
 C  ADVENTURES
-C gfortran -g -w -Wall -Wextra -Warray-temporaries -Wconversion -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan -fno-range-check -std=legacy -std=gnu -o adventure advent.for 2> compile.out
+C g77 -o adventure.out advent.for 2> compile.out
 
 C  CURRENT LIMITS:
 C    9650 WORDS OF MESSAGE TEXT (LINES, LINSIZ).
