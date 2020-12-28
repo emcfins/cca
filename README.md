@@ -20,11 +20,11 @@ docker run -it -v <location of project>:/data cca
 
 ```
 cd nelson-port
-gfortran -g -w -Wall -Wextra -Warray-temporaries -Wconversion -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=zero,overflow,underflow -finit-real=nan -fno-range-check -std=legacy -std=gnu -o adventure advent.for 2> compile.out
+g77 -o adventure.out advent.for 2> compile.out
 ```
 ### To Run
 ```
-./adventure
+./adventure.out
 ```
 
 ### Things I've learned so far by Erin
