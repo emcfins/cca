@@ -1,0 +1,22 @@
+FROM debian:8.6
+
+RUN apt-get update -y && \
+    apt-get install -y gcc python3 wget
+
+RUN wget http://gnxas.unicam.it/XASLABtars/g77_pack_64bit.tar && \    
+    tar xfv g77_pack_64bit.tar &&  \
+    chmod +x ./install.sh &&  \   
+    sed -i 's/sudo //g' /install.sh &&  \   
+    ./install.sh &&  \
+    echo "LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LIBRARY_PATH" >> ~/.bashrc && \
+    echo "export LIBRARY_PATH" >> ~/.bashrc && \    
+    ln -s /usr/lib/gcc/x86_64-linux-gnu/8/libgcc_s.so /usr/lib/x86_64-linux-gnu
+WORKDIR /data/nelson-port
+COPY interact_with_cca.py /data/nelson-port/.
+COPY adventure.out /data/nelson-port/.
+COPY advent.dat /data/nelson-port/.
+COPY wiz.for /data/nelson-port/.
+COPY advent.bin /data/nelson-port/.
+
+CMD ["/usr/bin/python3", "/data/nelson-port/interact_with_cca.py"]
+EXPOSE 22 8080
